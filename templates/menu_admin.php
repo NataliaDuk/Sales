@@ -27,6 +27,10 @@
                    href="?type=UserGroups&action=show">Показать таблицу UserGroups</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link<?= $this->data['controllerName'] == "Sales" ? " active" : "" ?>"
+                   href="?type=sales@action=show">Показать таблицу Sales</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="?type=Aut&action=logout">Выйти<?= isset($_SESSION['user']['code']) ? $_SESSION['user']['name'] : "" ?></a>
             </li>
         </ul>

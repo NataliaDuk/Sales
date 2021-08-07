@@ -6,12 +6,14 @@ return [
         "Users",
         "Usergroups",
         "News",
-        "Comments"
+        "Comments",
+        "Sales"
     ],
     "user" => [
         "Aut",
         "Main",
-        "Shownews"
+        "Shownews",
+        "Sales"
     ],
     "guest" => [
         "Aut",
