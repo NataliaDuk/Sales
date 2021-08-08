@@ -5,19 +5,20 @@ return [
         "Main",
         "Users",
         "Usergroups",
-        "News",
-        "Comments",
+        "Produkt",
+        "Countries",
         "Sales"
     ],
     "user" => [
         "Aut",
         "Main",
-        "Shownews",
+        "Produkt",
+        "Countries",
         "Sales"
     ],
     "guest" => [
         "Aut",
         "Main",
-        "Shownews"
+//        "Shownews"
     ]
 ];

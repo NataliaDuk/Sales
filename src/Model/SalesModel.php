@@ -21,12 +21,13 @@ SELECT
     `sale`.`customer`,
     `sale`.`weight`,
     `sale`.`cost`,
-    `users`.`name`
+    `users`.`name` AS 'user_groups_id'
 FROM
     `sale`,
-    `users`
--- WHERE
---     `users`.`user_groups_id` = `user_groups`.`id`
+     `users`,
+    `user_groups`
+WHERE
+    `users`.`user_groups_id` = `user_groups`.`id`
 SQL;
 
         return $this->query(
@@ -34,17 +35,17 @@ SQL;
         );
     }
 
-//    /**
-//     * @return array <int|string, array>
-//     * @throws \Exception
-//     */
-//    public function getGroupList() : array
-//    {
-//        $data = $this->query("SELECT `id`,`name` FROM `user_groups`");
-//        $arr = [];
-//        foreach ($data as $row) {
-//            $arr[$row['id']] = $row['name'];
-//        }
-//        return $arr;
-//    }
+    /**
+     * @return array <int|string, array>
+     * @throws \Exception
+     */
+    public function getGroupList() : array
+    {
+        $data = $this->query("SELECT `id`,`name` FROM `user_groups`");
+        $arr = [];
+        foreach ($data as $row) {
+            $arr[$row['id']] = $row['name'];
+        }
+        return $arr;
+    }
 }

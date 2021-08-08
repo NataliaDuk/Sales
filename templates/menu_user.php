@@ -10,9 +10,13 @@
                 <a class="nav-link<?= $this->data['controllerName'] == "Main" ? " active" : "" ?>" href="?">Home <span
                             class="sr-only">(current)</span></a>
             </li>
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link--><?//= $this->data['controllerName'] == "Shownews" ? " active" : "" ?><!--"-->
+<!--                   href="?type=Shownews&action=show">Просмотр новостей</a>-->
+<!--            </li>-->
             <li class="nav-item">
-                <a class="nav-link<?= $this->data['controllerName'] == "Shownews" ? " active" : "" ?>"
-                   href="?type=Shownews&action=show">Просмотр новостей</a>
+                <a class="nav-link<?= $this->data['controllerName'] == "Sales" ? " active" : "" ?>"
+                   href="?type=Sales@action=show">Показать таблицу Sales</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="?type=Aut&action=logout">Выйти<?= isset($_SESSION['user']['code']) ? $_SESSION['user']['name'] : "" ?></a>

@@ -28,7 +28,15 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link<?= $this->data['controllerName'] == "Sales" ? " active" : "" ?>"
-                   href="?type=sales@action=show">Показать таблицу Sales</a>
+                   href="?type=sales&action=show">Показать таблицу Sale</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link<?= $this->data['controllerName'] == "Sales" ? " active" : "" ?>"
+                   href="?type=produkt&action=show">Показать таблицу Produkt</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link<?= $this->data['controllerName'] == "Countries" ? " active" : "" ?>"
+                   href="?type=countries&action=show">Показать таблицу Countries</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="?type=Aut&action=logout">Выйти<?= isset($_SESSION['user']['code']) ? $_SESSION['user']['name'] : "" ?></a>
