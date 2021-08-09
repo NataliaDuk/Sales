@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Model;
 
 use W1020\Table as ORMTable;

@@ -21,13 +21,17 @@ SELECT
     `sale`.`customer`,
     `sale`.`weight`,
     `sale`.`cost`,
-    `users`.`name` AS 'user_groups_id'
+    `users`.`name` AS 'user_groups_id',
+    `countries`.`name` AS 'country_groups_id',
+    `produkt`.`name` AS 'produkt_groups_id'
 FROM
     `sale`,
+     `countries`,
+     `produkt`,
      `users`,
     `user_groups`
-WHERE
-    `users`.`user_groups_id` = `user_groups`.`id`
+-- WHERE
+--     `users`.`id` = `sale`.`users_id` and 
 SQL;
 
         return $this->query(
@@ -41,7 +45,7 @@ SQL;
      */
     public function getGroupList() : array
     {
-        $data = $this->query("SELECT `id`,`name` FROM `user_groups`");
+        $data = $this->query("SELECT `id`,`name` FROM `user_roups`");
         $arr = [];
         foreach ($data as $row) {
             $arr[$row['id']] = $row['name'];
