@@ -10,14 +10,14 @@
                 <a class="nav-link<?= $this->data['controllerName'] == "Main" ? " active" : "" ?>" href="?">Home <span
                             class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link<?= $this->data['controllerName'] == "News" ? " active" : "" ?>"
-                   href="?type=news&action=show">Показать таблицу News</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link<?= $this->data['controllerName'] == "Comments" ? " active" : "" ?>"
-                   href="?type=comments&action=show">Показать таблицу Comments</a>
-            </li>
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link--><?//= $this->data['controllerName'] == "News" ? " active" : "" ?><!--"-->
+<!--                   href="?type=news&action=show">Показать таблицу News</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link--><?//= $this->data['controllerName'] == "Comments" ? " active" : "" ?><!--"-->
+<!--                   href="?type=comments&action=show">Показать таблицу Comments</a>-->
+<!--            </li>-->
             <li class="nav-item">
                 <a class="nav-link<?= $this->data['controllerName'] == "Users" ? " active" : "" ?>"
                    href="?type=Users&action=show">Показать таблицу Users</a>

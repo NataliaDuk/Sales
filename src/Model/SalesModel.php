@@ -21,17 +21,16 @@ SELECT
     `sale`.`customer`,
     `sale`.`weight`,
     `sale`.`cost`,
-    `users`.`name` AS 'user_groups_id',
-    `countries`.`name` AS 'country_groups_id',
-    `produkt`.`name` AS 'produkt_groups_id'
+    `users`.`name` AS `users_id`,
+    `produkt`.`name` AS `produkt_id1`,
+    `countries`.`name` AS `countries_id`
 FROM
     `sale`,
-     `countries`,
-     `produkt`,
-     `users`,
-    `user_groups`
--- WHERE
---     `users`.`id` = `sale`.`users_id` and 
+    `produkt`,
+    `countries`,
+    `users`
+WHERE
+    `users`.`id` = `sale`.`users_id` AND `sale`.`countries_id` = `countries`.`id` AND `sale`.`produkt_id1` = `produkt`.`id`
 SQL;
 
         return $this->query(
