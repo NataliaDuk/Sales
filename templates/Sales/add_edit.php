@@ -6,12 +6,26 @@ use W1020\HTML\Select; ?>
 <?php
 foreach ($this->data["comments"] as $field => $value) {
     echo $value . "<br>";
-    if ($field == "user_groups_id") {
+    if ($field == "users_id") {
         echo (new Select())
                 ->setName($field)
                 ->setData($this->data["groupList"])
-                ->setSelected($this->data["row"]['user_groups_id'] ?? "")
+                ->setSelected($this->data["row"]['users_id'] ?? "")
                 ->html() . '<br>';
+
+//        if ($field == "countries_id") {
+//            echo (new Select())
+//                    ->setName($field)
+//                    ->setData($this->data["groupList"])
+//                    ->setSelected($this->data["row"]['countries_id'] ?? "")
+//                    ->html() . '<br>';
+//        }
+//            if ($field == "produkt_id") {
+//                echo (new Select())
+//                        ->setName($field)
+//                        ->setData($this->data["groupList"])
+//                        ->setSelected($this->data["row"]['produkt_id'] ?? "")
+//                        ->html() . '<br>';
 //            echo "<select name='$field'>";
 //            foreach ($this->data["groupList"] as $id => $name) {
 //                echo "<option value='$id' " .
@@ -20,8 +34,9 @@ foreach ($this->data["comments"] as $field => $value) {
 //            }
 //            echo "</select><br>";
 
-    } else {
-        echo "<input name='$field' value='" . ($this->data['row'][$field] ?? "") . "'><br>";
+        } else {
+            echo "<input name='$field' value='" . ($this->data['row1'][$field] ?? "") . "'><br>";
+        }
     }
-}
+
 ?>
