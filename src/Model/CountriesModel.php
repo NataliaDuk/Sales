@@ -28,13 +28,4 @@ SQL;
             "$sql LIMIT " . (($page - 1) * $this->pageSize) . ",$this->pageSize;"
         );
     }
-//    public function getGroupListCountries() : array
-//    {
-//        $data = $this->query("SELECT `id`,`name` FROM `countries`");
-//        $arr = [];
-//        foreach ($data as $row) {
-//            $arr[$row['id']] = $row['name'];
-//        }
-//        return $arr;
-//    }
 }

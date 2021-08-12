@@ -9,34 +9,28 @@ foreach ($this->data["comments"] as $field => $value) {
     if ($field == "users_id") {
         echo (new Select())
                 ->setName($field)
-                ->setData($this->data["groupList"])
+                ->setData($this->data["groupList1"])
                 ->setSelected($this->data["row"]['users_id'] ?? "")
                 ->html() . '<br>';
+    } elseif ($field == "countries_id") {
+        echo (new Select())
+                ->setName($field)
+                ->setData($this->data["groupList2"])
+                ->setSelected($this->data["row"]['countries_id'] ?? "")
+                ->html() . '<br>';
+    } elseif ($field == "produkt_id1") {
+        echo (new Select())
+                ->setName($field)
+                ->setData($this->data["groupList3"])
+                ->setSelected($this->data["row"]['produkt_id1'] ?? "")
+                ->html() . '<br>';
 
-//        if ($field == "countries_id") {
-//            echo (new Select())
-//                    ->setName($field)
-//                    ->setData($this->data["groupList"])
-//                    ->setSelected($this->data["row"]['countries_id'] ?? "")
-//                    ->html() . '<br>';
-//        }
-//            if ($field == "produkt_id") {
-//                echo (new Select())
-//                        ->setName($field)
-//                        ->setData($this->data["groupList"])
-//                        ->setSelected($this->data["row"]['produkt_id'] ?? "")
-//                        ->html() . '<br>';
-//            echo "<select name='$field'>";
-//            foreach ($this->data["groupList"] as $id => $name) {
-//                echo "<option value='$id' " .
-//                    (($this->data["row"]['user_groups_id'] == $id) ? "selected" : "") .
-//                    ">$name</option>";
-//            }
-//            echo "</select><br>";
 
-        } else {
-            echo "<input name='$field' value='" . ($this->data['row1'][$field] ?? "") . "'><br>";
-        }
+    } else {
+        echo "<input name='$field' value='" . ($this->data['row'][$field] ?? "") . "'><br>";
     }
+}
 
 ?>
+    <input type="submit" value="ok" class="btn btn-primary">
+</form>

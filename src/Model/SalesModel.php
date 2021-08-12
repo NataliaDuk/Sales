@@ -45,28 +45,29 @@ SQL;
     public function getGroupListUsers() : array
     {
         $data = $this->query("SELECT `id`,`name` FROM `users`");
-        $arr1 = [];
-        foreach ($data as $row1) {
-            $arr1[$row1['id']] = $row1['name'];
+        $arr = [];
+        foreach ($data as $row) {
+            $arr[$row['id']] = $row['name'];
         }
-        return $arr1;
+        return $arr;
     }
-//    public function getGroupListCountries() : array
-//    {
-//        $data = $this->query("SELECT `id`,`name` FROM `countries`");
-//        $arr2 = [];
-//        foreach ($data as $row2) {
-//            $arr2[$row2['id']] = $row2['name'];
-//        }
-//        return $arr2;
-//    }
-//    public function getGroupListProdukt() : array
-//    {
-//        $data = $this->query("SELECT `id`,`name` FROM `produkt`");
-//        $arr2 = [];
-//        foreach ($data as $row2) {
-//            $arr2[$row2['id']] = $row2['name'];
-//        }
-//        return $arr2;
-//    }
+    public function getGroupListCountries() : array
+    {
+        $data = $this->query("SELECT `id`,`name` FROM `countries`");
+        $arr = [];
+        foreach ($data as $row) {
+            $arr[$row['id']] = $row['name'];
+        }
+        return $arr;
+    }
+    public function getGroupListProdukt() : array
+    {
+        $data = $this->query("SELECT `id`,`name` FROM `produkt`");
+        $arr = [];
+        foreach ($data as $row) {
+            $arr[$row['id']] = $row['name'];
+        }
+        return $arr;
+    }
+    public function getFormCountries()
 }
