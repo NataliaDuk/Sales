@@ -26,6 +26,14 @@ foreach ($this->data["comments"] as $field => $value) {
                 ->html() . '<br>';
 
 
+    } elseif ($field == "customers_id") {
+        echo (new Select())
+                ->setName($field)
+                ->setData($this->data["groupList4"])
+                ->setSelected($this->data["row"]['customers_id'] ?? "")
+                ->html() . '<br>';
+
+
     } else {
         echo "<input name='$field' value='" . ($this->data['row'][$field] ?? "") . "'><br>";
     }

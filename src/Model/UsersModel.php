@@ -19,12 +19,12 @@ SELECT
     `users`.`login`,
     `users`.`pass`,
     `users`.`name`,
-    `user_groups`.`name` AS 'user_groups_id'
+    `user_groups`.`name` AS 'users_id'
 FROM
     `users`,
     `user_groups`
 WHERE
-    `users`.`user_groups_id` = `user_groups`.`id`
+    `users`.`users_id` = `user_groups`.`id`
 SQL;
 
         return $this->query(

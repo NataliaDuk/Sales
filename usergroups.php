@@ -7,13 +7,13 @@ return [
         "Usergroups",
         "Produkt",
         "Countries",
+        "Customers",
         "Sales"
     ],
     "user" => [
         "Aut",
         "Main",
-        "Produkt",
-        "Countries",
+        "Customers",
         "Sales"
     ],
     "guest" => [

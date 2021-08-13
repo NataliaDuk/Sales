@@ -18,19 +18,21 @@ class SalesModel extends ORMTable
 SELECT
     `sale`.`id`,
     `sale`.`data`,
-    `sale`.`customer`,
-    `sale`.`weight`,
-    `sale`.`cost`,
+    `customers`.`name` AS `customers_id`,
     `users`.`name` AS `users_id`,
+    `countries`.`name` AS `countries_id`,
     `produkt`.`name` AS `produkt_id1`,
-    `countries`.`name` AS `countries_id`
+    `sale`.`weight`,
+    `sale`.`cost`
 FROM
     `sale`,
-    `produkt`,
-    `countries`,
-    `users`
+     `users`,
+     `customers`,
+     `countries`,
+    `produkt`
 WHERE
-    `users`.`id` = `sale`.`users_id` AND `sale`.`countries_id` = `countries`.`id` AND `sale`.`produkt_id1` = `produkt`.`id`
+    `users`.`id` = `sale`.`users_id` AND `sale`.`countries_id` = `countries`.`id` AND `sale`.`produkt_id1` = `produkt`.`id` AND `customers`.`id` = `sale`.`customers_id`
+
 SQL;
 
         return $this->query(
@@ -69,5 +71,14 @@ SQL;
         }
         return $arr;
     }
-    public function getFormCountries()
+    public function getGroupListCustomers() : array
+    {
+        $data = $this->query("SELECT `id`,`name` FROM `customers`");
+        $arr = [];
+        foreach ($data as $row) {
+            $arr[$row['id']] = $row['name'];
+        }
+        return $arr;
+    }
+//    public function getFormCountries();
 }
