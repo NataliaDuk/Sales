@@ -14,7 +14,7 @@ return [
         "Aut",
         "Main",
         "Customers",
-        "Sales"
+        "Salesuser"
     ],
     "guest" => [
         "Aut",

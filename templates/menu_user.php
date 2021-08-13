@@ -12,11 +12,11 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link<?= $this->data['controllerName'] == "Customers" ? " active" : "" ?>"
-                   href="?type=customers&action=show">Показать таблицу Покупатели</a>
+                   href="?type=customers&action=show">Покупатели</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link<?= $this->data['controllerName'] == "Sales" ? " active" : "" ?>"
-                   href="?type=sales&action=show">Показать таблицу Продажи</a>
+                <a class="nav-link<?= $this->data['controllerName'] == "Salesuser" ? " active" : "" ?>"
+                   href="?type=salesuser&action=show">Продажи</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="?type=Aut&action=logout">Выйти<?= isset($_SESSION['user']['code']) ? $_SESSION['user']['name'] : "" ?></a>

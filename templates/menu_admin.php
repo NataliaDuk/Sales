@@ -20,27 +20,27 @@
 <!--            </li>-->
             <li class="nav-item">
                 <a class="nav-link<?= $this->data['controllerName'] == "Users" ? " active" : "" ?>"
-                   href="?type=Users&action=show">Показать таблицу Предприятия</a>
+                   href="?type=Users&action=show">Предприятия</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link<?= $this->data['controllerName'] == "UserGroups" ? " active" : "" ?>"
-                   href="?type=UserGroups&action=show">Показать таблицу Граппа пользователей</a>
+                   href="?type=UserGroups&action=show">Группа пользователей</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link<?= $this->data['controllerName'] == "Sales" ? " active" : "" ?>"
-                   href="?type=sales&action=show">Показать таблицу Продажи</a>
+                   href="?type=sales&action=show">Продажи</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link<?= $this->data['controllerName'] == "Produkt" ? " active" : "" ?>"
-                   href="?type=produkt&action=show">Показать таблицу Продукция</a>
+                   href="?type=produkt&action=show">Продукция</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link<?= $this->data['controllerName'] == "Countries" ? " active" : "" ?>"
-                   href="?type=countries&action=show">Показать таблицу Страны</a>
+                   href="?type=countries&action=show">Страны</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link<?= $this->data['controllerName'] == "Customers" ? " active" : "" ?>"
-                   href="?type=customers&action=show">Показать таблицу Покупатели</a>
+                   href="?type=customers&action=show">Покупатели</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="?type=Aut&action=logout">Выйти<?= isset($_SESSION['user']['code']) ? $_SESSION['user']['name'] : "" ?></a>

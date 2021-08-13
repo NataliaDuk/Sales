@@ -4,14 +4,11 @@ use W1020\HTML\Select; ?>
 
 <form action="<?= $this->data['action'] ?>" method="post">
 <?php
+
 foreach ($this->data["comments"] as $field => $value) {
     echo $value . "<br>";
     if ($field == "users_id") {
-        echo (new Select())
-                ->setName($field)
-                ->setData($this->data["groupList1"])
-                ->setSelected($this->data["row"]['users_id'] ?? "")
-                ->html() . '<br>';
+        echo "<input type='hidden' name='$field' value='" . ($this->data['row'][$field] ?? "") . "'><br>";
     } elseif ($field == "countries_id") {
         echo (new Select())
                 ->setName($field)
@@ -24,15 +21,12 @@ foreach ($this->data["comments"] as $field => $value) {
                 ->setData($this->data["groupList3"])
                 ->setSelected($this->data["row"]['produkt_id1'] ?? "")
                 ->html() . '<br>';
-
-
     } elseif ($field == "customers_id") {
         echo (new Select())
                 ->setName($field)
                 ->setData($this->data["groupList4"])
                 ->setSelected($this->data["row"]['customers_id'] ?? "")
                 ->html() . '<br>';
-
     } elseif ($field == "data") {
         echo "<input type='date' name='$field' value='" . ($this->data['row'][$field] ?? "") . "'><br>";
 
