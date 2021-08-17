@@ -8,13 +8,16 @@ return [
         "Produkt",
         "Countries",
         "Customers",
-        "Sales"
+        "Salesuser",
+        "Sales",
+        "Salesreport"
     ],
     "user" => [
         "Aut",
         "Main",
         "Customers",
-        "Salesuser"
+        "Salesuser",
+        "Salesreport"
     ],
     "guest" => [
         "Aut",

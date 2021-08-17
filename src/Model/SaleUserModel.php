@@ -19,9 +19,9 @@ class SaleUserModel extends ORMTable
         $sql = <<<SQL
 SELECT
     `sale`.`id`,
-    `sale`.`data`,
+    DATE_FORMAT(`sale`.`data`, '%d.%m.%Y'),
     `customers`.`name` AS `customers_id`,
-    `users`.`name` AS `users_id`,
+--     `users`.`name` AS `users_id`,
     `countries`.`name` AS `countries_id`,
     `produkt`.`name` AS `produkt_id1`,
     `sale`.`weight`,
@@ -37,7 +37,7 @@ WHERE
   AND `sale`.`countries_id` = `countries`.`id` 
   AND `sale`.`produkt_id1` = `produkt`.`id` 
    AND `customers`.`id` = `sale`.`customers_id` 
-  AND `users`.`id` = $this->userId
+  AND `users`.`id` = '$this->userId'
 
 SQL;
 //echo $sql;

@@ -17,7 +17,7 @@ class SalesModel extends ORMTable
         $sql = <<<SQL
 SELECT
     `sale`.`id`,
-    `sale`.`data`,
+     DATE_FORMAT(`sale`.`data`, '%d.%m.%Y'),
     `customers`.`name` AS `customers_id`,
     `users`.`name` AS `users_id`,
     `countries`.`name` AS `countries_id`,
@@ -44,7 +44,7 @@ SQL;
      * @return array <int|string, array>
      * @throws \Exception
      */
-    public function getGroupListUsers() : array
+    public function getGroupListUsers(): array
     {
         $data = $this->query("SELECT `id`,`name` FROM `users`");
         $arr = [];
@@ -53,7 +53,8 @@ SQL;
         }
         return $arr;
     }
-    public function getGroupListCountries() : array
+
+    public function getGroupListCountries(): array
     {
         $data = $this->query("SELECT `id`,`name` FROM `countries`");
         $arr = [];
@@ -62,7 +63,8 @@ SQL;
         }
         return $arr;
     }
-    public function getGroupListProdukt() : array
+
+    public function getGroupListProdukt(): array
     {
         $data = $this->query("SELECT `id`,`name` FROM `produkt`");
         $arr = [];
@@ -71,7 +73,8 @@ SQL;
         }
         return $arr;
     }
-    public function getGroupListCustomers() : array
+
+    public function getGroupListCustomers(): array
     {
         $data = $this->query("SELECT `id`,`name` FROM `customers`");
         $arr = [];

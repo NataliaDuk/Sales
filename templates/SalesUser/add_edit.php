@@ -4,11 +4,15 @@ use W1020\HTML\Select; ?>
 
 <form action="<?= $this->data['action'] ?>" method="post">
 <?php
-
+//unset($this->data["comments"]["users_id"]);
+//foreach ($this->data["table"] as &$row) {
+//    unset($row["users_id"]);
+//}
 foreach ($this->data["comments"] as $field => $value) {
     echo $value . "<br>";
     if ($field == "users_id") {
-        echo "<input type='hidden' name='$field' value='" . ($this->data['row'][$field] ?? "") . "'><br>";
+
+        echo "<input type='hidden' name='$field' value='" . ($_SESSION['user']['id']) . "'><br>";
     } elseif ($field == "countries_id") {
         echo (new Select())
                 ->setName($field)
@@ -31,6 +35,7 @@ foreach ($this->data["comments"] as $field => $value) {
         echo "<input type='date' name='$field' value='" . ($this->data['row'][$field] ?? "") . "'><br>";
 
     } else {
+
         echo "<input name='$field' value='" . ($this->data['row'][$field] ?? "") . "'><br>";
     }
 }

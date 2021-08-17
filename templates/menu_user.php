@@ -7,15 +7,14 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link<?= $this->data['controllerName'] == "Main" ? " active" : "" ?>" href="?">Home <span
-                            class="sr-only">(current)</span></a>
+                <a class="nav-link<?= $this->data['controllerName'] == "Main" ? " active" : "" ?>" href="?">Главная</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link<?= $this->data['controllerName'] == "Customers" ? " active" : "" ?>"
                    href="?type=customers&action=show">Покупатели</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link<?= $this->data['controllerName'] == "Salesuser" ? " active" : "" ?>"
+                <a class="nav-link<?= $this->data['controllerName'] == "SalesUser" ? " active" : "" ?>"
                    href="?type=salesuser&action=show">Продажи</a>
             </li>
             <li class="nav-item">
