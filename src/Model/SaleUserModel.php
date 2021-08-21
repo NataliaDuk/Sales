@@ -1,14 +1,13 @@
 <?php
 
-
 namespace App\Model;
 
 use W1020\Table as ORMTable;
 
 class SaleUserModel extends ORMTable
+
 {
     protected int $userId;
-
     /**
      * @param int $page
      * @return array<array>
@@ -21,7 +20,7 @@ SELECT
     `sale`.`id`,
     DATE_FORMAT(`sale`.`data`, '%d.%m.%Y'),
     `customers`.`name` AS `customers_id`,
---     `users`.`name` AS `users_id`,
+    `users`.`name` AS `users_id`,
     `countries`.`name` AS `countries_id`,
     `produkt`.`name` AS `produkt_id1`,
     `sale`.`weight`,
@@ -48,7 +47,6 @@ SQL;
 
     public function rowCount(): int
     {
-
         return $this->query("SELECT COUNT(*) as COUNT FROM `$this->tableName` WHERE `users_id`=$this->userId")[0]["COUNT"];
     }
 

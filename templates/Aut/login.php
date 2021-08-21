@@ -1,5 +1,26 @@
-<form action="?type=Aut&action=login" method="post">
-    <input class="form-control form-group" type="text" name="login" placeholder="Введите логин">
-    <input class="form-control form-group" type="password" name="pass" placeholder="Введите пароль">
-    <input class="btn btn-lg btn-primary btn-block btn-signin" type="submit" value="OK">
-</form>
+<div class="aut">
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+
+            </div>
+            <div class="col-4">
+                <form class="mb-3" action="?type=Aut&action=login" method="post">
+                    <div class="mb-3">
+                        <label style="color: blue" for="exampleFormControlInput1" class="form-label">Логин</label>
+                        <input class="form-control-lg form-group" type="text" name="login" placeholder="Введите логин">
+                    </div>
+                    <div class="mb-3">
+                        <label style="color: blue;" for="exampleFormControlInput1" class="form-label">Пароль</label>
+                        <input class="form-control-lg form-group" type="password" name="pass"
+                               placeholder="Введите пароль">
+                    </div>
+                    <input class="btn btn-lg btn-primary btn-block btn-signin" type="submit" value="OK">
+                </form>
+            </div>
+            <div class="col-4">
+
+            </div>
+        </div>
+    </div>
+</div>

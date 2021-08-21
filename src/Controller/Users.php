@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Controller;
-
 
 use App\Model\UsersModel;
 
@@ -17,7 +15,6 @@ class Users extends Table
         $config["table"] = $this->tableName;
         $this->pageSize = $config["page_size"];
         $this->model = new UsersModel($config);
-
     }
 
     public function actionShowEdit(): void

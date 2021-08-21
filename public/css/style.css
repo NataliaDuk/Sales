@@ -1,18 +1,30 @@
-.news_text {
-    width: 500px;
-    height: 100px;
-    color: blueviolet;
-}
 
-.block_news_edit {
-    margin: 0 auto;
-    /*position: absolute;*/
-    /*left: 50%;*/
-    /*transform: translate(-50%, 0)*/
+#footer {
+    position: fixed; /* Фиксированное положение */
+    left: 0; bottom: 0; /* Левый нижний угол */
+    padding: 20px; /* Поля вокруг текста */
+    background: darkgrey; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    width: 100%; /* Ширина слоя */
 }
+.main {
 
-.news_image {
-    width: 100px;
-    height: auto;
-    border: 1px #e22b80 solid;
+    background-image: url("/public/images/sales/1613586574_33-p-foni-dlya-finansovikh-prezentatsii-40.jpg");
+    background-size: 100%;
+    padding: 200px;
+    text-align: center;
+    height: 850px;
+}
+.aut {
+
+    background-image: url("/public/images/sales/1613553900_270-p-delovoi-fon-dlya-prezentatsii-291.jpg");
+    background-size: 100%;
+    padding: 100px;
+    text-align: center;
+    color: blue;
+    font-size: 20px;
+    height: 850px;
+
+
+
 }

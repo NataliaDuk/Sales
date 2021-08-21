@@ -4,10 +4,9 @@ namespace App\Model;
 
 use W1020\Table as ORMTable;
 
-
-class SalesReportModel extends ORMTable
+class ReportUserModel extends ORMTable
 {
-
+    protected int $userId;
     /**
      * @param int $page
      * @return array<array>
@@ -15,56 +14,50 @@ class SalesReportModel extends ORMTable
      */
     public function getFilter(string $startData, string $endData): array
     {
-        $sql1 = <<<SQL
+        $sql = <<<SQL
 SELECT
     `countries`.`name` AS countries_id,
     `produkt`.`name` AS `produkt_id1`,
-    SUM(`weight`) AS weight,
-    SUM(`cost`) AS cost
-  
+    SUM(`cost`) AS cost,
+    SUM(`weight`) AS weight
 FROM
     `sale`,
     `countries`,
-    `produkt`
+    `produkt`,
+     `users`
 WHERE
-    `sale`.`countries_id` = `countries`.`id` AND `sale`.`produkt_id1` = `produkt`.`id` 
+     `users`.`id` = `sale`.`users_id` AND `sale`.`countries_id` = `countries`.`id` AND `sale`.`produkt_id1` = `produkt`.`id` AND `users`.`id` = '$this->userId'
     AND 
       `data` >= '$startData' AND `data` <= '$endData'
-
-
 GROUP BY
---     `sale`.`data`,
+   
     `countries`.`name`,
     `produkt`.`name`
 
-ORDER BY
-     `countries`.`name` ASC, `produkt`.`name` ASC
-
 SQL;
-        return $this->query($sql1);
-    }
 
-        public function getFilter2(string $startData, string $endData, string $countries): array
+        return $this->query($sql);
+    }
+    public function getFilter2(string $startData, string $endData, string $countries): array
     {
         $sql = <<<SQL
 SELECT
     `countries`.`name` AS countries_id,
     `produkt`.`name` AS `produkt_id1`,
-    SUM(`weight`) AS weight,
-    SUM(`cost`) AS cost
-  
+    SUM(`cost`) AS cost,
+    SUM(`weight`) AS weight
 FROM
     `sale`,
     `countries`,
-    `produkt`
+    `produkt`,
+     `users`
 WHERE
-    `sale`.`countries_id` = `countries`.`id` AND `sale`.`produkt_id1` = `produkt`.`id` 
+     `users`.`id` = `sale`.`users_id` AND `sale`.`countries_id` = `countries`.`id` AND `sale`.`produkt_id1` = `produkt`.`id` AND `users`.`id` = '$this->userId'
     AND 
       `data` >= '$startData' AND `data` <= '$endData'
- AND 
+AND 
      `countries`.`name` = '$countries'
 GROUP BY
---     `sale`.`data`,
     `countries`.`name`,
     `produkt`.`name`
 
@@ -72,6 +65,7 @@ ORDER BY
      `countries`.`name` ASC, `produkt`.`name` ASC
 
 SQL;
+//echo $sql;
         return $this->query($sql);
     }
     public function getFilter3(string $startData, string $endData, string $produkt): array
@@ -80,18 +74,18 @@ SQL;
 SELECT
     `countries`.`name` AS countries_id,
     `produkt`.`name` AS `produkt_id1`,
-    SUM(`weight`) AS weight,
-    SUM(`cost`) AS cost
-  
+    SUM(`cost`) AS cost,
+    SUM(`weight`) AS weight
 FROM
     `sale`,
     `countries`,
-    `produkt`
+    `produkt`,
+     `users`
 WHERE
-    `sale`.`countries_id` = `countries`.`id` AND `sale`.`produkt_id1` = `produkt`.`id` 
+     `users`.`id` = `sale`.`users_id` AND `sale`.`countries_id` = `countries`.`id` AND `sale`.`produkt_id1` = `produkt`.`id` AND `users`.`id` = '$this->userId'
     AND 
       `data` >= '$startData' AND `data` <= '$endData'
- AND 
+AND 
      `produkt`.`name` = '$produkt'
 GROUP BY
     `countries`.`name`,
@@ -101,7 +95,18 @@ ORDER BY
      `countries`.`name` ASC, `produkt`.`name` ASC
 
 SQL;
+//echo $sql;
         return $this->query($sql);
+    }
+
+    /**
+     * @param int $userId
+     * @return $this
+     */
+    public function setUserId(int $userId): static
+    {
+        $this->userId = $userId;
+        return $this;
     }
 
 }

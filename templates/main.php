@@ -25,7 +25,6 @@ if (!empty($_SESSION['warnings'])) {
     $_SESSION['warnings'] = [];
 }
 ?>
-
             <?php
             /**
              * @var $this App\View\View
@@ -33,6 +32,9 @@ if (!empty($_SESSION['warnings'])) {
             $this->body();
             ?>
 
+<div id="footer">
+&copy; Наталья Дук тел. +375 33 646 89 49
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"

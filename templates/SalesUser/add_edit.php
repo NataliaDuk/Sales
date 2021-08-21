@@ -4,10 +4,7 @@ use W1020\HTML\Select; ?>
 
 <form action="<?= $this->data['action'] ?>" method="post">
 <?php
-//unset($this->data["comments"]["users_id"]);
-//foreach ($this->data["table"] as &$row) {
-//    unset($row["users_id"]);
-//}
+
 foreach ($this->data["comments"] as $field => $value) {
     echo $value . "<br>";
     if ($field == "users_id") {
