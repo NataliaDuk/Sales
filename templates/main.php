@@ -20,7 +20,7 @@ include "menu_" . ($_SESSION['user']['code'] ?? 'guest') . ".php";
 <?php
 if (!empty($_SESSION['warnings'])) {
     foreach ($_SESSION['warnings'] as $warning) {
-        echo "<div class='alert alert-warning' role='alert'>$warning</div>";
+        echo "<div class='alert alert-primary d-flex align-items-center' role='alert'>$warning</div>";
     }
     $_SESSION['warnings'] = [];
 }

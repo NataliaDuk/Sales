@@ -1,10 +1,10 @@
 <div class="aut">
     <div class="container">
         <div class="row">
-            <div class="col-4">
+            <div class="col-6">
 
             </div>
-            <div class="col-4">
+            <div class="col-3">
                 <form class="mb-3" action="?type=Aut&action=login" method="post">
                     <div class="mb-3">
                         <label style="color: blue" for="exampleFormControlInput1" class="form-label">Логин</label>

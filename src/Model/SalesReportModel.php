@@ -13,45 +13,71 @@ class SalesReportModel extends ORMTable
      * @return array<array>
      * @throws \Exception
      */
+
     public function getFilter(string $startData, string $endData): array
     {
-        $sql1 = <<<SQL
+        $sql = <<<SQL
 SELECT
-    `countries`.`name` AS countries_id,
-    `produkt`.`name` AS `produkt_id1`,
-    SUM(`weight`) AS weight,
+    DATE_FORMAT(`sale`.`data`, '%m_%Y') AS MONTH_YEAR,
+    `users`.`name` AS users_id,
+--     `produkt`.`name` AS `produkt_id1`,
+--     SUM(`weight`) AS weight,
     SUM(`cost`) AS cost
-  
 FROM
     `sale`,
-    `countries`,
-    `produkt`
+    `users`
+--     `produkt`
 WHERE
-    `sale`.`countries_id` = `countries`.`id` AND `sale`.`produkt_id1` = `produkt`.`id` 
+    `sale`.`users_id` = `users`.`id` 
+--     AND `sale`.`produkt_id1` = `produkt`.`id` 
     AND 
       `data` >= '$startData' AND `data` <= '$endData'
-
-
 GROUP BY
---     `sale`.`data`,
-    `countries`.`name`,
-    `produkt`.`name`
+DATE_FORMAT(`sale`.`data`, '%m_%Y'),
+    `users`.`name`
+--     `produkt`.`name`
 
 ORDER BY
-     `countries`.`name` ASC, `produkt`.`name` ASC
-
+         MONTH_YEAR,
+     `users`.`name` ASC
 SQL;
-        return $this->query($sql1);
+        return $this->query($sql);
     }
 
-        public function getFilter2(string $startData, string $endData, string $countries): array
+    public function getFilter1(string $startData, string $endData): array
+    {
+        $sql = <<<SQL
+SELECT
+    DATE_FORMAT(`sale`.`data`, '%Y') AS `YEAR`,
+    `users`.`name` AS users_id,
+    SUM(`cost`) AS cost
+FROM
+    `sale`,
+    `users`
+WHERE
+    `sale`.`users_id` = `users`.`id` 
+    AND 
+      `data` >= '$startData' AND `data` <= '$endData'
+GROUP BY
+DATE_FORMAT(`sale`.`data`, '%Y'),
+    `users`.`name`
+ORDER BY
+         `YEAR`,
+     `users`.`name` ASC
+SQL;
+        return $this->query($sql);
+    }
+
+    public function getFilter2(string $startData, string $endData, string $countries): array
     {
         $sql = <<<SQL
 SELECT
     `countries`.`name` AS countries_id,
     `produkt`.`name` AS `produkt_id1`,
     SUM(`weight`) AS weight,
-    SUM(`cost`) AS cost
+    SUM(`cost`) AS cost,
+    ROUND(SUM(`cost`) / SUM(`weight`),
+    2) AS price
   
 FROM
     `sale`,
@@ -62,7 +88,7 @@ WHERE
     AND 
       `data` >= '$startData' AND `data` <= '$endData'
  AND 
-     `countries`.`name` = '$countries'
+     countries_id = '$countries'
 GROUP BY
 --     `sale`.`data`,
     `countries`.`name`,
@@ -74,14 +100,17 @@ ORDER BY
 SQL;
         return $this->query($sql);
     }
+
     public function getFilter3(string $startData, string $endData, string $produkt): array
     {
         $sql = <<<SQL
 SELECT
-    `countries`.`name` AS countries_id,
     `produkt`.`name` AS `produkt_id1`,
+    `countries`.`name` AS countries_id,
     SUM(`weight`) AS weight,
-    SUM(`cost`) AS cost
+    SUM(`cost`) AS cost,
+    ROUND(SUM(`cost`) / SUM(`weight`),
+    2) AS price
   
 FROM
     `sale`,
@@ -92,7 +121,7 @@ WHERE
     AND 
       `data` >= '$startData' AND `data` <= '$endData'
  AND 
-     `produkt`.`name` = '$produkt'
+     `produkt_id1` = '$produkt'
 GROUP BY
     `countries`.`name`,
     `produkt`.`name`
@@ -103,5 +132,22 @@ ORDER BY
 SQL;
         return $this->query($sql);
     }
-
+    public function getGroupListCountries(): array
+    {
+        $data = $this->query("SELECT `id`,`name` FROM `countries`");
+        $arr = [];
+        foreach ($data as $row) {
+            $arr[$row['id']] = $row['name'];
+        }
+        return $arr;
+    }
+    public function getGroupListProdukt(): array
+    {
+        $data = $this->query("SELECT `id`,`name` FROM `produkt`");
+        $arr = [];
+        foreach ($data as $row) {
+            $arr[$row['id']] = $row['name'];
+        }
+        return $arr;
+    }
 }

@@ -12,7 +12,7 @@ use W1020\HTML\Table;
 
 echo (new Table())
     ->setData($this->data["table"])
-    ->setHeaders(["Страна", "Продукция", "Вес", "Стоимость"])
+    ->setHeaders(["Продукция", "Страна", "Вес", "Стоимость", "Средняя цена"])
     ->setClass("table table-bordered border-primary table-striped table-hover")
     ->html();
 ?>

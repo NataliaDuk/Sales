@@ -18,8 +18,8 @@ class SalesModel extends ORMTable
 SELECT
     `sale`.`id`,
      DATE_FORMAT(`sale`.`data`, '%d.%m.%Y'),
+     `users`.`name` AS `users_id`,
     `customers`.`name` AS `customers_id`,
-    `users`.`name` AS `users_id`,
     `countries`.`name` AS `countries_id`,
     `produkt`.`name` AS `produkt_id1`,
     `sale`.`weight`,

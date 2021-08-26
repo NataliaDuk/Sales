@@ -1,10 +1,6 @@
 <?php
 
-
 namespace App\Controller;
-
-
-use App\View\View;
 
 class Main extends AbstractController
 {
@@ -13,6 +9,5 @@ class Main extends AbstractController
         $this
             ->view
             ->setTemplate("Main/index");
-//            ->view();
     }
 }

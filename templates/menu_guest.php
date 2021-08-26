@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(100,149,237);">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -7,22 +7,17 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link<?= $this->data['controllerName'] == "Main" ? " active" : "" ?>" href="?">Home <span
-                            class="sr-only">(current)</span></a>
+                <a class="nav-link<?= $this->data['controllerName'] == "Main" ? " active" : "" ?>" href="?">Главная <span
+                            class="sr-only"></span></a>
             </li>
-<!--            <li class="nav-item">-->
-<!--                <a class="nav-link--><?//= $this->data['controllerName'] == "Shownews" ? " active" : "" ?><!--"-->
-<!--                   href="?type=Shownews&action=show">Просмотр новостей</a>-->
-<!--            </li>-->
-
             <li class="nav-item">
                 <a class="nav-link<?= $this->data['controllerName'] == "Aut" ? " active" : "" ?>"
                    href="?type=Aut&action=show">Войти</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link<?= $this->data['controllerName'] == "Aut" ? " active" : "" ?>"
-                   href="?type=Aut&action=showreg">Регистрация</a>
-            </li>
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link--><?//= $this->data['controllerName'] == "Aut" ? " active" : "" ?><!--"-->
+<!--                   href="?type=Aut&action=showreg">Регистрация</a>-->
+<!--            </li>-->
         </ul>
     </div>
 </nav>

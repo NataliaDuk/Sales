@@ -39,7 +39,7 @@ WHERE
   AND `users`.`id` = '$this->userId'
 
 SQL;
-//echo $sql;
+
         return $this->query(
             "$sql LIMIT " . (($page - 1) * $this->pageSize) . ",$this->pageSize;"
         );

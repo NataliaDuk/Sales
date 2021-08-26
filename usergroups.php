@@ -20,8 +20,7 @@ return [
         "Userreport"
     ],
     "guest" => [
-        "Aut",
         "Main",
-//        "Shownews"
+        "Aut"
     ]
 ];

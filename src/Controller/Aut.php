@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Controller;
-
 
 use App\Helper\Password;
 use App\Model\AutModel;
@@ -22,16 +20,15 @@ class Aut extends AbstractController
         $this->model = new AutModel($config);
     }
 
+
     public function actionShow(): void
     {
         $this->view->setTemplate("Aut/login");
-//            ->view();
     }
 
     public function actionShowReg(): void
     {
         $this->view->setTemplate("Aut/registration");
-//            ->view();
     }
 
     public function actionReg(): void
@@ -82,16 +79,13 @@ class Aut extends AbstractController
         }
 
         if ($ok) {
-//            print_r($_POST);
             $config = include __DIR__ . "/../../config.php";
             $this->model->addNewUser($_POST['login'], md5($_POST['pass1'] . $config['salt']), $_POST['name']);
-//            $this->model->addNewUser($_POST['login'], $_POST['pass1'], $_POST['name']);
             $this->redirect("?");
         } else {
             $_SESSION['regData'] = $_POST;
             $this->redirect("?type=Aut&action=showreg");
         }
-
     }
 
     /**
@@ -99,12 +93,8 @@ class Aut extends AbstractController
      */
     public function actionLogin(): void
     {
-        //print_r($_POST);
-        //$_SESSION['user']
-//        $user = $this->model->checkUser($_POST['login'], $_POST['pass']);
         $config = include __DIR__ . "/../../config.php";
         $user = $this->model->checkUser($_POST['login'], md5($_POST['pass'] . $config['salt']));
-//        print_r($user);
         if (empty($user)) {
             $this->redirect("?type=Aut&action=show");
         } else {

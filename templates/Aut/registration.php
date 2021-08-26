@@ -2,7 +2,7 @@
     <h1>Форма для регистрации</h1><br>
     <div class="container">
         <div class="row">
-            <div class="col-4">
+            <div class="col-6">
 
             </div>
             <div class="col-3">

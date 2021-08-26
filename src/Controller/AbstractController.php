@@ -14,6 +14,9 @@ abstract class AbstractController
         $this->view->setData(['controllerName' => $this->getCurrentClass()]);
     }
 
+    /**
+     * @param string $url
+     */
     public function redirect(string $url): void
     {
         header("Location: $url");

@@ -107,3 +107,16 @@ GROUP BY
 ORDER BY
     `countries`.`name` ASC,
     `produkt`.`name` ASC
+
+SELECT
+    YEAR(`sale`.`data`) AS 'YEAR',
+    `countries`.`name` AS countries_id,
+    SUM(`cost`) AS cost
+FROM
+    `sale`,
+    `countries`
+WHERE
+    `sale`.`countries_id` = `countries`.`id` AND YEAR(`sale`.`data`) >= 2020 AND YEAR(`sale`.`data`) <= 2021
+GROUP BY
+    YEAR(`sale`.`data`),
+    `countries`.`name`

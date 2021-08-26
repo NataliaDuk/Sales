@@ -3,7 +3,7 @@
         <div class="col-3">
         </div>
         <div class="col-9 report">
-            <h1>Анализ продаж по странам и видам продукции</h1>
+            <h1>Анализ продаж по месяцам</h1>
             <h2>за период с <?= date("d.m.Y", strtotime($_POST['startdata'])); ?>
                 по <?= date("d.m.Y", strtotime($_POST['enddata'])); ?></h2>
             <?php
@@ -17,7 +17,7 @@
 
             echo (new Table())
                 ->setData($this->data["table"])
-                ->setHeaders(["Страна", "Продукция", "Вес", "Стоимость, тыс.долл.", "Средняя цена, долл. за 1 кг"])
+                ->setHeaders(["Месяц_год", "Стоимость, тыс.долл."])
                 ->setClass("table table-bordered border-primary table-striped table-hover")
                 ->html();
             ?>

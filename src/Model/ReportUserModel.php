@@ -8,7 +8,8 @@ class ReportUserModel extends ORMTable
 {
     protected int $userId;
     /**
-     * @param int $page
+     * @param string $startData
+     * @param string $endData
      * @return array<array>
      * @throws \Exception
      */
@@ -18,8 +19,10 @@ class ReportUserModel extends ORMTable
 SELECT
     `countries`.`name` AS countries_id,
     `produkt`.`name` AS `produkt_id1`,
+    SUM(`weight`) AS weight,
     SUM(`cost`) AS cost,
-    SUM(`weight`) AS weight
+    ROUND(SUM(`cost`) / SUM(`weight`),
+    2) AS price
 FROM
     `sale`,
     `countries`,
@@ -38,14 +41,39 @@ SQL;
 
         return $this->query($sql);
     }
+    public function getFilter1(string $startData, string $endData): array
+    {
+        $sql = <<<SQL
+SELECT
+    DATE_FORMAT(`sale`.`data`, '%m_%Y') AS MONTH_YEAR,
+    SUM(`cost`) AS cost
+FROM
+    `sale`,
+    `users`
+WHERE
+    `sale`.`users_id` = `users`.`id` AND `users`.`id` = '$this->userId'
+    AND 
+      `data` >= '$startData' AND `data` <= '$endData'
+GROUP BY
+DATE_FORMAT(`sale`.`data`, '%m_%Y'),
+    `users`.`name`
+ORDER BY
+         MONTH_YEAR ASC
+SQL;
+        return $this->query($sql);
+    }
+
+
     public function getFilter2(string $startData, string $endData, string $countries): array
     {
         $sql = <<<SQL
 SELECT
     `countries`.`name` AS countries_id,
     `produkt`.`name` AS `produkt_id1`,
+    SUM(`weight`) AS weight,
     SUM(`cost`) AS cost,
-    SUM(`weight`) AS weight
+    ROUND(SUM(`cost`) / SUM(`weight`),
+    2) AS price
 FROM
     `sale`,
     `countries`,
@@ -56,7 +84,7 @@ WHERE
     AND 
       `data` >= '$startData' AND `data` <= '$endData'
 AND 
-     `countries`.`name` = '$countries'
+     `countries_id` = '$countries'
 GROUP BY
     `countries`.`name`,
     `produkt`.`name`
@@ -74,8 +102,10 @@ SQL;
 SELECT
     `countries`.`name` AS countries_id,
     `produkt`.`name` AS `produkt_id1`,
+    SUM(`weight`) AS weight,
     SUM(`cost`) AS cost,
-    SUM(`weight`) AS weight
+    ROUND(SUM(`cost`) / SUM(`weight`),
+    2) AS price
 FROM
     `sale`,
     `countries`,
@@ -86,7 +116,7 @@ WHERE
     AND 
       `data` >= '$startData' AND `data` <= '$endData'
 AND 
-     `produkt`.`name` = '$produkt'
+     `produkt_id1` = '$produkt'
 GROUP BY
     `countries`.`name`,
     `produkt`.`name`
@@ -108,5 +138,22 @@ SQL;
         $this->userId = $userId;
         return $this;
     }
-
+    public function getGroupListCountries(): array
+    {
+        $data = $this->query("SELECT `id`,`name` FROM `countries`");
+        $arr = [];
+        foreach ($data as $row) {
+            $arr[$row['id']] = $row['name'];
+        }
+        return $arr;
+    }
+    public function getGroupListProdukt(): array
+    {
+        $data = $this->query("SELECT `id`,`name` FROM `produkt`");
+        $arr = [];
+        foreach ($data as $row) {
+            $arr[$row['id']] = $row['name'];
+        }
+        return $arr;
+    }
 }
