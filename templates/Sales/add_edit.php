@@ -30,8 +30,6 @@
                                 ->setData($this->data["groupList3"])
                                 ->setSelected($this->data["row"]['produkt_id1'] ?? "")
                                 ->html() . '<br>';
-
-
                     } elseif ($field == "customers_id") {
                         echo (new Select())
                                 ->setName($field)
@@ -55,4 +53,4 @@
 
         </div>
     </div>
-</div
+</div>

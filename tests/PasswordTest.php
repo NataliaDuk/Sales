@@ -14,7 +14,7 @@ class PasswordTest extends TestCase
         $this->row = new Password("");
     }
 
-    public function testgetCountNum(): void
+    public function testCheckMinSize(): void
     {
         $this->assertTrue(
             $this

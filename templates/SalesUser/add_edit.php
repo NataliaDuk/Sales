@@ -1,16 +1,15 @@
 <div class="container">
     <div class="row">
-        <div class="col-3">
+        <div class="col">
 
         </div>
-        <div class="col-6 edit">
+        <div class="col-3 edit">
             <?php
             //print_r($this->data);
             use W1020\HTML\Select; ?>
 
             <form action="<?= $this->data['action'] ?>" method="post">
                 <?php
-
                 foreach ($this->data["comments"] as $field => $value) {
 
                     if ($field == "users_id") {
@@ -48,7 +47,6 @@
                         echo "<input name='$field' value='" . ($this->data['row'][$field] ?? "") . "'><br><br>";
                     }
                 }
-
                 ?>
                 <input type="submit" value="ok" class="btn btn-primary">
             </form>

@@ -51,7 +51,7 @@ use W1020\HTML\Select; ?>
                     }
                     echo "</select>";
                     ?>
-                <input type="submit" value="Выбрать" class="btn btn-primary">
+                    <input type="submit" value="Выбрать" class="btn btn-primary">
             </form>
         </div>
         <div class="col">

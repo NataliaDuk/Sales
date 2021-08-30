@@ -23,8 +23,8 @@
         echo (new Table())
             ->setData($this->data["table"])
             ->setHeaders($this->data["comments"])
-            ->addColumn(fn($row) => "<a href='?type={$this->data['controllerName']}&action=del&id=$row[id]'>❌</a>")
-            ->addColumn(fn($row) => "<a href='?type={$this->data['controllerName']}&action=showedit&id=$row[id]'>✏</a>")
+            ->addColumn(fn($row) => "<a href='?type={$this->data['controllerName']}&action=del&id=$row[id]'><img src='/public/images/sales/del.png' ></a>")
+            ->addColumn(fn($row) => "<a href='?type={$this->data['controllerName']}&action=showedit&id=$row[id]'><img src='/public/images/sales/edit.png' ></a>")
             ->setClass("table table-striped table-hover table-bordered border-primary")
             ->html();
         echo (new Pagination())

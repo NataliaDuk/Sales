@@ -7,7 +7,7 @@
             <form action="?type=userreport&action=filter1" method="post">
                 <h3>1.Отчет за период</h3><br>
                 период с <input type="date" name="startdata">
-                по <input type="date" name="enddata"><br>
+                по <input type="date" name="enddata">
                 <input type="submit" value="Выбрать" class="btn btn-primary">
             </form>
             <form action="?type=userreport&action=filter" method="post">

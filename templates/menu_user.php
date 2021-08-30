@@ -11,7 +11,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link<?= $this->data['controllerName'] == "SalesUser" ? " active" : "" ?>"
-                   href="?type=salesuser&action=show">Форма для заполнения: Продажи</a>
+                   href="?type=salesuser&action=show"> Продажи</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link<?= $this->data['controllerName'] == "Customers" ? " active" : "" ?>"
@@ -28,6 +28,9 @@
 <!--                    <li><a class="dropdown-item" href="#">Продажи по предприятиям и странам</a></li>-->
                 </ul>
             </div>
+            <li class="nav-item active exit">
+                <img class='exit' src="/public/images/sales/open.jpg">
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="?type=Aut&action=logout">Выйти: <?= isset($_SESSION['user']['code']) ? $_SESSION['user']['name'] : "" ?></a>
             </li>

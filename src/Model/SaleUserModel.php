@@ -8,6 +8,7 @@ class SaleUserModel extends ORMTable
 
 {
     protected int $userId;
+
     /**
      * @param int $page
      * @return array<array>
@@ -59,11 +60,12 @@ SQL;
         $this->userId = $userId;
         return $this;
     }
+
     /**
      * @return array <int|string, array>
      * @throws \Exception
      */
-    public function getGroupListUsers() : array
+    public function getGroupListUsers(): array
     {
         $data = $this->query("SELECT `id`,`name` FROM `users`");
         $arr = [];
@@ -72,7 +74,8 @@ SQL;
         }
         return $arr;
     }
-    public function getGroupListCountries() : array
+
+    public function getGroupListCountries(): array
     {
         $data = $this->query("SELECT `id`,`name` FROM `countries`");
         $arr = [];
@@ -81,7 +84,8 @@ SQL;
         }
         return $arr;
     }
-    public function getGroupListProdukt() : array
+
+    public function getGroupListProdukt(): array
     {
         $data = $this->query("SELECT `id`,`name` FROM `produkt`");
         $arr = [];
@@ -90,7 +94,8 @@ SQL;
         }
         return $arr;
     }
-    public function getGroupListCustomers() : array
+
+    public function getGroupListCustomers(): array
     {
         $data = $this->query("SELECT `id`,`name` FROM `customers`");
         $arr = [];

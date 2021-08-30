@@ -9,6 +9,9 @@
             use W1020\HTML\Pagination;
             use W1020\HTML\Table;
 
+            foreach ($this->data["table"] as &$row) {
+                $row['pass'] = '🔑🔑🔑';
+            }
             echo (new Table())
                 ->setData($this->data["table"])
                 ->setHeaders($this->data["comments"])
@@ -30,6 +33,8 @@
         </div>
     </div>
 </div>
+
+
 
 
 

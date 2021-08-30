@@ -10,14 +10,14 @@
                 <a class="nav-link<?= $this->data['controllerName'] == "Main" ? " active" : "" ?>" href="?">Главная <span
                             class="sr-only"></span></a>
             </li>
+            <li class="nav-item active">
+                <img class='exit' src="/public/images/sales/open.jpg">
+            </li>
             <li class="nav-item">
                 <a class="nav-link<?= $this->data['controllerName'] == "Aut" ? " active" : "" ?>"
                    href="?type=Aut&action=show">Войти</a>
             </li>
-<!--            <li class="nav-item">-->
-<!--                <a class="nav-link--><?//= $this->data['controllerName'] == "Aut" ? " active" : "" ?><!--"-->
-<!--                   href="?type=Aut&action=showreg">Регистрация</a>-->
-<!--            </li>-->
+
         </ul>
     </div>
 </nav>

@@ -7,6 +7,7 @@ use W1020\Table as ORMTable;
 class ReportUserModel extends ORMTable
 {
     protected int $userId;
+
     /**
      * @param string $startData
      * @param string $endData
@@ -41,6 +42,7 @@ SQL;
 
         return $this->query($sql);
     }
+
     public function getFilter1(string $startData, string $endData): array
     {
         $sql = <<<SQL
@@ -100,8 +102,8 @@ SQL;
     {
         $sql = <<<SQL
 SELECT
+    `produkt`.`name` AS `produkt_id1`,   
     `countries`.`name` AS countries_id,
-    `produkt`.`name` AS `produkt_id1`,
     SUM(`weight`) AS weight,
     SUM(`cost`) AS cost,
     ROUND(SUM(`cost`) / SUM(`weight`),
@@ -138,6 +140,7 @@ SQL;
         $this->userId = $userId;
         return $this;
     }
+
     public function getGroupListCountries(): array
     {
         $data = $this->query("SELECT `id`,`name` FROM `countries`");
@@ -147,6 +150,7 @@ SQL;
         }
         return $arr;
     }
+
     public function getGroupListProdukt(): array
     {
         $data = $this->query("SELECT `id`,`name` FROM `produkt`");
