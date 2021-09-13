@@ -4,9 +4,9 @@ use W1020\HTML\Select; ?>
 
 <div class="container">
     <div class="row">
-        <div class="col-3">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xl-2">
         </div>
-        <div class="col-9 filter">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-8 col-xl-8 filter">
             <br>
             <h3>Выбрать данные для отчета:</h3><br>
             <form action="?type=salesreport&action=filter" method="post">
@@ -54,7 +54,7 @@ use W1020\HTML\Select; ?>
                     <input type="submit" value="Выбрать" class="btn btn-primary">
             </form>
         </div>
-        <div class="col">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xl-2">
         </div>
     </div>
 </div>

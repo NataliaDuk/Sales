@@ -2,10 +2,10 @@
     <h1>Форма для регистрации</h1><br>
     <div class="container">
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xl-2">
 
             </div>
-            <div class="col-3">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-8 col-xl-8">
                 <form action="?type=Aut&action=reg" method="post">
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Наименование
@@ -20,13 +20,13 @@
                                value="<?= $_SESSION['regData']['login'] ?? '' ?>">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Пароль</label>
+                        <label for="exampleFormControlInput1" class="form-label">Пароль</label><br>
                         <input class="form-control-lg form-group" type="password" name="pass1" placeholder="Введите пароль"
                                value="<?= $_SESSION['regData']['pass1'] ?? '' ?>">
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Введите пароль
-                            повторно</label>
+                            повторно</label><br>
                         <input class="form-control-lg form-group" type="password" name="pass2"
                                placeholder="Введите пароль повторно"
                                value="<?= $_SESSION['regData']['pass2'] ?? '' ?>">
@@ -37,7 +37,7 @@
 
                 </form>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xl-2">
 
             </div>
         </div>

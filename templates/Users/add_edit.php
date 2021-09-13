@@ -3,10 +3,10 @@
 use W1020\HTML\Select; ?>
 <div class="container">
     <div class="row">
-        <div class="col-6">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3">
 
         </div>
-        <div class="col edit">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-9 col-xl-9 edit">
             <form action="<?= $this->data['action'] ?>" method="post">
                 <?php
                 foreach ($this->data["comments"] as $field => $value) {
@@ -25,7 +25,7 @@ use W1020\HTML\Select; ?>
                 <input type="submit" value="ok" class="btn btn-primary">
             </form>
         </div>
-        <div class="col">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3">
 
         </div>
     </div>
