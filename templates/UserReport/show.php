@@ -1,9 +1,9 @@
 <div class="container">
     <div class="row">
-        <div class="col-3">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xl-2">
         </div>
-        <div class="col-9 filter">
-            <h3>Выбрать вариант отчета</h3><br>
+        <div class="col-12 col-sm-12 col-md-4 col-lg-8 col-xl-8 filter">
+            <h2>Выбрать вариант отчета</h2><br>
             <form action="?type=userreport&action=filter1" method="post">
                 <h3>1.Отчет за период</h3><br>
                 период с <input type="date" name="startdata">
@@ -50,7 +50,7 @@
             </form>
             <br>
         </div>
-        <div class="col">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xl-2">
         </div>
     </div>
 </div>

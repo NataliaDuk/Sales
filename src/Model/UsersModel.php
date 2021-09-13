@@ -25,6 +25,7 @@ FROM
     `user_groups`
 WHERE
     `users`.`users_id` = `user_groups`.`id`
+
 SQL;
 
         return $this->query(

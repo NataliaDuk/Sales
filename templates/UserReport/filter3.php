@@ -1,9 +1,9 @@
 <div class="container">
     <div class="row">
-        <div class="col">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xl-2">
 
         </div>
-        <div class="col-9">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-8 col-xl-8">
         <h1>Отчет о продажах по странам и видам продукции </h1>
     <h2>за период с <?= date("d.m.Y", strtotime($_POST['startdata']));?> по <?= date("d.m.Y", strtotime($_POST['enddata']));?></h2>
 <?php
@@ -17,7 +17,7 @@ echo (new Table())
     ->html();
 ?>
         </div>
-        <div class="col">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xl-2">
 
         </div>
     </div>

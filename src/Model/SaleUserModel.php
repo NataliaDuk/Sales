@@ -38,7 +38,7 @@ WHERE
   AND `sale`.`produkt_id1` = `produkt`.`id` 
    AND `customers`.`id` = `sale`.`customers_id` 
   AND `users`.`id` = '$this->userId'
-
+ORDER BY `sale`.`data`
 SQL;
 
         return $this->query(

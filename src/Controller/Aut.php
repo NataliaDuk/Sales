@@ -20,7 +20,6 @@ class Aut extends AbstractController
         $this->model = new AutModel($config);
     }
 
-
     public function actionShow(): void
     {
         $this->view->setTemplate("Aut/login");

@@ -1,7 +1,7 @@
 <div>
     <div class="container">
         <div class="row">
-            <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 info">
                 <div class="list-group">
                     <button type="button" class="list-group-item list-group-item-action list-group-item-primary"
                             aria-current="true">

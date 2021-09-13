@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Model;
 
 use W1020\Table as ORMTable;
@@ -32,7 +31,7 @@ FROM
     `produkt`
 WHERE
     `users`.`id` = `sale`.`users_id` AND `sale`.`countries_id` = `countries`.`id` AND `sale`.`produkt_id1` = `produkt`.`id` AND `customers`.`id` = `sale`.`customers_id`
-
+ORDER BY `sale`.`data`
 SQL;
 
         return $this->query(
@@ -84,5 +83,4 @@ SQL;
         return $arr;
     }
 
-//    public function getFormCountries();
 }

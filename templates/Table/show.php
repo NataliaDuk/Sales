@@ -1,9 +1,9 @@
 <div class="container">
     <div class="row">
-        <div class="col-3">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xl-2">
 
         </div>
-        <div class="col-9 report">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-8 col-xl-8 report">
             <?php
 
             use W1020\HTML\Pagination;
@@ -25,7 +25,7 @@
 
             <a href="?type=<?= $this->data['controllerName'] ?>&action=showadd" class="btn btn-primary">Добавить</a>
         </div>
-        <div class="col">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xl-2">
 
         </div>
     </div>

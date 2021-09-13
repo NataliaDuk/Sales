@@ -1,14 +1,10 @@
-<?php
-//print_r($this->data);
-use W1020\HTML\Select; ?>
-
 <div class="container">
     <div class="row">
         <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xl-2">
         </div>
         <div class="col-12 col-sm-12 col-md-4 col-lg-8 col-xl-8 filter">
             <br>
-            <h3>Выбрать данные для отчета:</h3><br>
+            <h2>Выбрать данные для отчета:</h2><br>
             <form action="?type=salesreport&action=filter" method="post">
                 <h3>1.Отчет за период по предприятиям (по месяцам)</h3><br>
                 период с <input type="date" name="startdata">

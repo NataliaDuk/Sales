@@ -6,9 +6,19 @@
 Сервис предназначен для внутреннего использования. Для получения доступа к сервису
 необходимо получить у администратора логин и пароль для входа.
 
+Этот сервис разработан в рамках учебного проекта. В дальнейшем планируется расширение его функциональных возможностей.
+
+Логин и Пароль для админа:
+
 Login: adminA
 
 Password: admina123
+
+Логин и Пароль для пользователя:
+
+Login: moloko
+
+Password: moloko12345
 
 ER DIAGRAM
 
@@ -17,7 +27,11 @@ ER DIAGRAM
 USE CASE DIAGRAM
 
 ![img_1.png](img_1.png)
+
 Ссылки на библиотеки:
+
 https://packagist.org/packages/w1020/html
+
 https://packagist.org/packages/w1020/orm
+
 https://packagist.org/packages/phpoffice/phpspreadsheet

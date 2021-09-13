@@ -1,9 +1,9 @@
 <div class="container">
     <div class="row">
-        <div class="col-3">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xl-2">
 
         </div>
-        <div class="col-6 edit">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-8 col-xl-8 edit">
             <?php
             //print_r($this->data);
             ?>
@@ -18,7 +18,7 @@
                 <input type="submit" value="Ok" class="btn btn-primary">
             </form>
         </div>
-        <div class="col">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-2 col-xl-2">
 
         </div>
     </div>

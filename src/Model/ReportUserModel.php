@@ -95,7 +95,6 @@ ORDER BY
      `countries`.`name` ASC, `produkt`.`name` ASC
 
 SQL;
-//echo $sql;
         return $this->query($sql);
     }
     public function getFilter3(string $startData, string $endData, string $produkt): array
@@ -127,7 +126,6 @@ ORDER BY
      `countries`.`name` ASC, `produkt`.`name` ASC
 
 SQL;
-//echo $sql;
         return $this->query($sql);
     }
 
