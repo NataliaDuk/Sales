@@ -18,8 +18,8 @@ class UserReport extends Sales
         $this->model->setUserId($_SESSION['user']['id']);
     }
 
-    /**Показывает таблицу
-     * @throws \Exception
+    /**
+     * Показывает страницу, на которой осуществляется выбор отчета
      */
     public function actionShow(): void
     {
@@ -32,7 +32,9 @@ class UserReport extends Sales
             ])
             ->setTemplate("UserReport/show");
     }
-
+    /**
+     * Показывает страницу с отчетом
+     */
     public function actionFilter(): void
     {
         $this

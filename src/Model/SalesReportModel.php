@@ -8,8 +8,9 @@ use W1020\Table as ORMTable;
 class SalesReportModel extends ORMTable
 {
 
-    /**
-     * @param int $page
+    /**получает данные из базы данных для отчета
+     * @param string $startData
+     * @param string $endData
      * @return array<array>
      * @throws \Exception
      */
@@ -39,6 +40,12 @@ SQL;
         return $this->query($sql);
     }
 
+    /** получает данные из базы данных для отчета
+     * @param string $startData
+     * @param string $endData
+     * @return array
+     * @throws \Exception
+     */
     public function getFilter1(string $startData, string $endData): array
     {
         $sql = <<<SQL
@@ -63,6 +70,13 @@ SQL;
         return $this->query($sql);
     }
 
+    /** получает данные из базы данных для отчета
+     * @param string $startData
+     * @param string $endData
+     * @param string $countries
+     * @return array
+     * @throws \Exception
+     */
     public function getFilter2(string $startData, string $endData, string $countries): array
     {
         $sql = <<<SQL
@@ -96,6 +110,13 @@ SQL;
         return $this->query($sql);
     }
 
+    /** получает данные из базы данных для отчета
+     * @param string $startData
+     * @param string $endData
+     * @param string $produkt
+     * @return array
+     * @throws \Exception
+     */
     public function getFilter3(string $startData, string $endData, string $produkt): array
     {
         $sql = <<<SQL
@@ -127,6 +148,11 @@ ORDER BY
 SQL;
         return $this->query($sql);
     }
+
+    /** получает данные из базы в виде списка
+     * @return array
+     * @throws \Exception
+     */
     public function getGroupListCountries(): array
     {
         $data = $this->query("SELECT `id`,`name` FROM `countries`");
@@ -136,6 +162,11 @@ SQL;
         }
         return $arr;
     }
+
+    /** получает данные из базы в виде списка
+     * @return array
+     * @throws \Exception
+     */
     public function getGroupListProdukt(): array
     {
         $data = $this->query("SELECT `id`,`name` FROM `produkt`");

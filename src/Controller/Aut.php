@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Helper\Password;
 use App\Model\AutModel;
+use Exception;
 
 class Aut extends AbstractController
 {
@@ -19,17 +20,25 @@ class Aut extends AbstractController
         $config["table"] = "users";
         $this->model = new AutModel($config);
     }
-
+    /**
+     * показывает страницу с формой для аутентификации
+     */
     public function actionShow(): void
     {
         $this->view->setTemplate("Aut/login");
     }
 
+    /**
+     * показывает страницу с формой для регистрации
+     */
     public function actionShowReg(): void
     {
         $this->view->setTemplate("Aut/registration");
     }
 
+    /** выполняет проверку логина и пароля
+     * @throws Exception
+     */
     public function actionReg(): void
     {
         $ok = true;
@@ -88,7 +97,7 @@ class Aut extends AbstractController
     }
 
     /**
-     * @throws \Exception
+     * @throws Exception
      */
     public function actionLogin(): void
     {
