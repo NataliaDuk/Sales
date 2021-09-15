@@ -10,7 +10,6 @@ body {
 }
 
 .container {
-    padding: 10px;
     max-width: 100%;
     float: left; /*Задаем обтекание*/
     /*text-align: center; !*Центрируем текст по горизонтали*!*/
@@ -18,6 +17,7 @@ body {
 
 .navbar {
     font-size: 20px !important;
+    width: 100%;
 }
 .exit {
     margin: 0 20px 0;
