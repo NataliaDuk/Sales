@@ -7,6 +7,7 @@ body {
     float: left; /*Задаем обтекание*/
     width: 300px;
     text-align: center; /*Центрируем текст по горизонтали*/
+    padding: 20px;
 }
 
 .container {
