@@ -31,7 +31,8 @@
             </div>
             <div class="col-12 col-sm-12 col-md-4 col-lg-9 col-xl-9 report">
                 <h1>Продажи. Форма для заполнения.</h1>
-
+                <a class="btn btn-success"  href="?type=sales&action=export" target="_blank">Export to Excel</a>
+                <br><br>
                 <?php
 
                 use W1020\HTML\Pagination;

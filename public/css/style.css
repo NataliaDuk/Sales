@@ -22,9 +22,7 @@ body {
 .exit {
     margin: 0 20px 0;
 }
-/*.dropdown {*/
-/*    padding: 10px;*/
-/*}*/
+
 p {
     text-indent: 20px; /* Отступ первой строки в пикселах */
     text-align: left;
@@ -99,7 +97,6 @@ h2 {
 }
 
 .table {
-    /*width: 1200px;*/
     text-align: center;
     max-width: 100%;
 }
@@ -119,6 +116,5 @@ h2 {
     text-align: center;
     color: blue;
     font-size: 20px;
-
     height: 850px;
 }
