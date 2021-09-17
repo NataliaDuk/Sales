@@ -53,6 +53,10 @@ SQL;
         return $arr;
     }
 
+    /**
+     * @return array <int|string, array>
+     * @throws \Exception
+     */
     public function getGroupListCountries(): array
     {
         $data = $this->query("SELECT `id`,`name` FROM `countries`");
@@ -63,6 +67,10 @@ SQL;
         return $arr;
     }
 
+    /**
+     * @return array <int|string, array>
+     * @throws \Exception
+     */
     public function getGroupListProdukt(): array
     {
         $data = $this->query("SELECT `id`,`name` FROM `produkt`");
@@ -73,6 +81,10 @@ SQL;
         return $arr;
     }
 
+    /**
+     * @return array <int|string, array>
+     * @throws \Exception
+     */
     public function getGroupListCustomers(): array
     {
         $data = $this->query("SELECT `id`,`name` FROM `customers`");
@@ -82,6 +94,11 @@ SQL;
         }
         return $arr;
     }
+
+    /**
+     * @return array <int|string, array>
+     * @throws \Exception
+     */
     public function getList(): array
     {
         $sql = <<<SQL

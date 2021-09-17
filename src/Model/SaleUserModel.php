@@ -75,6 +75,10 @@ SQL;
         return $arr;
     }
 
+    /**
+     * @return array <int|string, array>
+     * @throws \Exception
+     */
     public function getGroupListCountries(): array
     {
         $data = $this->query("SELECT `id`,`name` FROM `countries`");
@@ -85,6 +89,10 @@ SQL;
         return $arr;
     }
 
+    /**
+     * @return array <int|string, array>
+     * @throws \Exception
+     */
     public function getGroupListProdukt(): array
     {
         $data = $this->query("SELECT `id`,`name` FROM `produkt`");
@@ -95,6 +103,10 @@ SQL;
         return $arr;
     }
 
+    /**
+     * @return array <int|string, array>
+     * @throws \Exception
+     */
     public function getGroupListCustomers(): array
     {
         $data = $this->query("SELECT `id`,`name` FROM `customers`");
@@ -103,5 +115,39 @@ SQL;
             $arr[$row['id']] = $row['name'];
         }
         return $arr;
+    }
+
+    /**
+     * @return array <int|string, array>
+     * @throws \Exception
+     */
+    public function getList(): array
+    {
+        $sql = <<<SQL
+SELECT
+    `sale`.`id`,
+    DATE_FORMAT(`sale`.`data`, '%d.%m.%Y') AS 'data',
+    `customers`.`name` AS `customers_id`,
+    `users`.`name` AS `users_id`,
+    `countries`.`name` AS `countries_id`,
+    `produkt`.`name` AS `produkt_id1`,
+    `sale`.`weight`,
+    `sale`.`cost`
+FROM
+    `sale`,
+     `users`,
+     `customers`,
+     `countries`,
+    `produkt`
+WHERE
+    `users`.`id` = `sale`.`users_id` 
+  AND `sale`.`countries_id` = `countries`.`id` 
+  AND `sale`.`produkt_id1` = `produkt`.`id` 
+   AND `customers`.`id` = `sale`.`customers_id` 
+  AND `users`.`id` = '$this->userId'
+ORDER BY `sale`.`data`
+SQL;
+
+        return $this->query($sql);
     }
 }
