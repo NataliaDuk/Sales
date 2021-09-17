@@ -3,6 +3,12 @@
 namespace App\Controller;
 
 use App\Model\SalesReportModel;
+use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Style\Alignment;
+use PhpOffice\PhpSpreadsheet\Style\Border;
+use PhpOffice\PhpSpreadsheet\Style\Fill;
+use PhpOffice\PhpSpreadsheet\Style\Font;
 
 class SalesReport extends Sales
 {
@@ -75,5 +81,6 @@ class SalesReport extends Sales
             ])
             ->setTemplate("SalesReport/filter3");
     }
+
 
 }

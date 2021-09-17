@@ -5,7 +5,9 @@
         <div class="col-12 col-sm-12 col-md-4 col-lg-8 col-xl-8 report">
         <h1>Анализ продаж по месяцам</h1>
     <h2>за период с <?= date("d.m.Y", strtotime($_POST['startdata']));?> по <?= date("d.m.Y", strtotime($_POST['enddata']));?></h2>
-<?php
+<!--            <a class="btn btn-success"  href="?type=salesreport&action=export" target="_blank">Export to Excel</a>-->
+<br><br>
+            <?php
 
 use W1020\HTML\Table;
 
